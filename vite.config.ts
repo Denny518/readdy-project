@@ -3,10 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import { resolve } from "node:path";
 import AutoImport from "unplugin-auto-import/vite";
 
-// ⚠️ 关键修改：base 设置为相对路径，保证 SPA 刷新和子路由不空白
-const base = process.env.BASE_PATH || "./";
+const base = process.env.BASE_PATH || "/";
 const isPreview = process.env.IS_PREVIEW ? true : false;
-
 // https://vite.dev/config/
 export default defineConfig({
   define: {
@@ -60,6 +58,7 @@ export default defineConfig({
             "Outlet",
           ],
         },
+        // React i18n
         {
           "react-i18next": ["useTranslation", "Trans"],
         },
@@ -67,10 +66,10 @@ export default defineConfig({
       dts: true,
     }),
   ],
-  base, // ⚠️ 保留 base
+  base,
   build: {
     sourcemap: true,
-    outDir: "out", // ⚠️ 输出目录
+    outDir: "out",
   },
   resolve: {
     alias: {
