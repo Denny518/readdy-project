@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /ai-image-editor
+Allow: /pricing
+
+Sitemap: https://example.com/sitemap.xml
