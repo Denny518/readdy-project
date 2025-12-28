@@ -1,4 +1,7 @@
 {
   "framework": "vite",
-  "outputDirectory": "out"
+  "outputDirectory": "out",
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
